@@ -117,6 +117,15 @@ lazy val demoNative =
     ).
     dependsOn(scalalib)
 
+lazy val fibNative =
+  project.in(file("fib-native")).
+    settings(libSettings).
+    settings(
+      nativeVerbose := true,
+      nativeClangOptions := Seq("-O2")
+    ).
+    dependsOn(scalalib)
+
 lazy val demoJVM =
   project.in(file("demo-jvm")).
     settings(
